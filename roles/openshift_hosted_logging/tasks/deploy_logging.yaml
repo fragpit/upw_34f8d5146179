@@ -9,9 +9,11 @@
     with_items:
       - "/usr/share/openshift/examples/infrastructure-templates/enterprise/"
 
-  - name: "[custom] Download template"
-    command: >
-      wget https://raw.githubusercontent.com/openshift/origin-aggregated-logging/master/deployer/deployer.yaml -O /usr/share/openshift/examples/infrastructure-templates/enterprise/logging-deployer.yaml
+  - name: "[custom] Copy deployer template"
+    copy:
+      dest: "/usr/share/openshift/examples/infrastructure-templates/enterprise/logging-deployer.yaml"
+      src: "logging-deployer.yaml"
+#      force: yes
 
   - name: "[custom] delete logging project if already exists"
     command: oc delete project logging
