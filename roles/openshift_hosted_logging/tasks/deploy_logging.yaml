@@ -13,7 +13,6 @@
     copy:
       dest: "/usr/share/openshift/examples/infrastructure-templates/enterprise/logging-deployer.yaml"
       src: "logging-deployer.yaml"
-#      force: yes
 
   - name: "[custom] delete logging project if already exists"
     command: oc delete project logging
