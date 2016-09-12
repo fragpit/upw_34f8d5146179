@@ -16,6 +16,7 @@
 
   - name: "[custom] delete logging project if already exists"
     command: oc delete project logging
+    ignore_errors: true
 
   - name: Create temp directory for kubeconfig
     command: mktemp -d /tmp/openshift-ansible-XXXXXX
